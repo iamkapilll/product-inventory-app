@@ -1,0 +1,27 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+</head>
+<body>
+    <h1><%= category %> products!</h1>
+    <ul>
+        <ul>
+            <% products.forEach(product => { %>
+                <li>
+                    <a href="/products/<%= product._id %>"><%= product.name %></a><!-- product name will be shown -->
+                </li>
+            <% }) %>
+          </ul>
+          
+    </ul>
+    <a href="/products/new">New product</a>
+    <% if (category !== "All") {%>
+            <a href="/products">ALL products</a>
+     <% } %>
+</body>
+</html>
+

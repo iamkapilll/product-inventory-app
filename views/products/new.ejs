@@ -1,0 +1,29 @@
+<!-- new.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Products</title>
+</head>
+<body>
+    <h1>Add a product</h1>
+    <form action="/products" method="POST">   <!-- that action ="/product" is where the new data will be submitted and then shown -->
+        <label for="name">Product Name</label>
+        <input type="text" name="name" placeholder="Product Name" required>
+        <label for="price">Price (Unit)</label>
+        <input type="number" name="price" placeholder="Product Price" required>
+        <label for="category">Select Category</label>
+        <select name="category" id="category">
+            <% for (let category of categories) { %>
+                <option value="<%= category %>"><%= category %></option>
+            <% } %>
+                <!-- here this above loop logic code works as exact as the below code -->
+            <!-- <option value="fruit">fruit</option>
+            <option value="vegetable">vegetable</option>
+            <option value="dairy">dairy</option> -->
+        </select>
+        <button>submit</button>
+    </form>
+</body>
+</html>
